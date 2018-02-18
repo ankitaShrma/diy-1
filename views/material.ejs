@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--<link rel="stylesheet" type="text/css" href="style/style.css">-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>upload</title>
+
+    <!-- Bootstrap -->
+    <link href="stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="stylesheet/style.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style>
+        
+        /*    --------------------------------------------------
+  :: Login Section
+  -------------------------------------------------- */
+        #login {
+            padding-top: 50px
+        }
+        #login .form-wrap {
+            width: 30%;
+            margin: 0 auto;
+        }
+        #login h1 {
+            color: #1b1b34;
+            font-size: 18px;
+            text-align: center;
+            font-weight: bold;
+            padding-bottom: 20px;
+        }
+        #login .form-group {
+            margin-bottom: 25px;
+        }
+        #login .checkbox {
+            margin-bottom: 20px;
+            position: relative;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+        }
+        #login .checkbox.show:before {
+            content: '\e013';
+            color: #1fa67b;
+            font-size: 17px;
+            margin: 1px 0 0 3px;
+            position: absolute;
+            pointer-events: none;
+            font-family: 'Glyphicons Halflings';
+        }
+        #login .checkbox .character-checkbox {
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+            vertical-align: middle;
+            display: inline-block;
+        }
+        #login .checkbox .label {
+            color: #6d6d6d;
+            font-size: 13px;
+            font-weight: normal;
+        }
+        #login .btn.btn-custom {
+            font-size: 14px;
+          margin-bottom: 20px;
+        }
+        #login .forget {
+            font-size: 13px;
+          text-align: center;
+          display: block;
+        }
+
+        /*    --------------------------------------------------
+          :: Inputs & Buttons
+          -------------------------------------------------- */
+        .form-control {
+            color: #212121;
+        }
+        .btn-custom {
+            color: #fff;
+          background-color: #1b1b34;
+        }
+        .btn-custom:hover,
+        .btn-custom:focus {
+            color: #fff;
+        }
+
+        /*    --------------------------------------------------
+            :: Footer
+          -------------------------------------------------- */
+        .footer {
+        position: absolute;
+     right: 0;
+      bottom: 0;
+      left: 0;
+      text-align: center;
+     background-color: #1b1b34;
+     color: white;
+        
+       }
+
+       .my-nav {
+      position: absolute;
+      background: #1b1b34;
+      width: 100%;
+      z-index: 999;
+      border: 0;
+      border-radius: 0;
+      font-weight: bold;
+      font-size: 22px;
+    }
+
+    .my-nav .navbar-nav a {
+      color: white !important;
+
+
+    }
+
+    .my-nav .navbar-nav .dropdown-menu a {
+      color: black !important;
+      }
+
+    
+      
+    </style>    
+
+
+  </head>
+  <body>
+  <!--navbar-->
+  
+<!--end of nav bar-->
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+          <section id="login">
+            <div class="container" >
+              <div class="row">
+                  <div class="col-xs-12">
+                      <div class="form-wrap">
+                        <h1>Upload File</h1>
+                            <form role="form" action="/materialSave" method="POST" enctype="multipart/form-data" id="login-form" autocomplete="off">
+                                <div class="form-group">
+                                    <label for="department" class="sr-only">type</label>
+                                   <!-- <input type="text" name="department" id="department" class="form-control" placeholder="Department">-->
+                                   <select id="department" name="department" class="form-control">
+                                   <option value="" selected="selected">(Please select type)</option>
+                                   <option value="Clothing">Clothing</option>
+                                  <option value="accesories">accesories</option>
+                                  <option value="crafts">crafts</option>
+                                  <option value="decor">decor</option>
+                                  
+                                   </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="courseName" class="sr-only">Name</label>
+                                    <input type="text" name="name" id="name" class="form-control" placeholder="Name">
+                                </div>
+                               <!-- <div class="form-group">
+                                    <label for="year" class="sr-only">Year</label>
+                                    <input type="text" name="year" id="year" class="form-control" placeholder="Year">
+                                </div>-->
+                                
+                                <!--<div class="form-group">
+                                    <label for="semester" class="sr-only">Semester</label>
+                                    <input type="text" name="semester" id="semester" class="form-control" placeholder="Semester">
+                                </div>-->
+                                 <div class="form-group">
+                                    <label for="price" class="sr-only">Price</label>
+                                    <input type="text" name="price" id="price" class="form-control" placeholder="Price">
+                                   
+                                </div>
+                                <div class="form-group">
+                                    <label for="info" class="sr-only">Info</label>
+                                    <input type="text" name="info" id="info" class="form-control" placeholder="Info">
+                                   
+                                </div>
+                                 
+                                <div class="form-group">
+                                    <label for="myimage" class="sr-only">File</label>
+                                    <input type="file" name="myimage" id="myimage" class="form-control" placeholder="File">
+                                </div>
+                                <input type="submit" id="btn-login" class="btn btn-custom btn-sm btn-block" value="Upload">
+                            </form>
+                           
+                      </div>
+                </div> <!-- /.col-xs-12 -->
+              </div> <!-- /.row -->
+            </div> <!-- /.container -->
+        </section>
+       
+
+        <div class="footer">
+          <p><br /><strong>© CE III/II 2017<br><br></strong>
+            <a href="about" color="white"><span class="glyphicon glyphicon-chevron-right"></span> About us</a>
+            <a href="https://www.facebook.com"><span class="glyphicon glyphicon-chevron-right"></span> Contact Us on Facebook</a>
+          </p>
+        </div>
+
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+	<head>
+	 	<title>test</title>
+	</head>
+
+<body>
+	<form action="/filesave" method="POST" enctype="multipart/form-data">
+	 <input type="file" name="myimage" ></input>
+	 <input type="text" name="courseCode" placeholder="Course code"></input>
+	 <input type="text" name="courseName" placeholder="Course name"></input>
+	 <input type="number" name="year" value="Year"></input>
+	 <input type="number" name="semester" value="Semester"></input>
+	 <input type="text" name="department" placeholder="Department"></input>
+	 <br/>S-Syllabus L-lecture B-book A-assignment
+	 <input type="text" name="uploadtype" ></input>
+
+
+
+	<input type="submit" name="submit" value="submit"></input>
+	</form>
+
+
+</body>
+
+</html> -->
